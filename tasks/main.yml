@@ -10,10 +10,12 @@
     - mdns-repeater
 
 - name: ensure the avahi reflector is enabled
-  lineinfile:
-    dest: /etc/avahi/avahi-daemon.conf
-    regexp: '^#enable-reflector.*$'
-    line: 'enable-reflector=yes'
+  ini_file:
+    path: /etc/avahi/avahi-daemon.conf
+    section: reflector
+    option: enable-reflector
+    value: yes
+    backup: yes
   notify:
     - restart avahi-daemon
   tags:
