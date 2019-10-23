@@ -14,7 +14,8 @@
     path: /etc/avahi/avahi-daemon.conf
     section: reflector
     option: enable-reflector
-    value: yes
+    value: "yes"
+    no_extra_spaces: yes
     backup: yes
   notify:
     - restart avahi-daemon
