@@ -1,0 +1,8 @@
+---
+- name: ensure the avahi packages are installed
+  package:
+    name: "{{ dubzland_mdns_repeater_packages }}"
+    state: present
+  notify: enable avahi daemon
+  tags:
+    - mdns-repeater

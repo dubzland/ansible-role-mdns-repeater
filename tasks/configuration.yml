@@ -1,0 +1,12 @@
+---
+- name: ensure the avahi reflector is enabled
+  ini_file:
+    path: "{{ dubzland_mdns_repeater_avahi_conf_file }}"
+    section: reflector
+    option: enable-reflector
+    value: "yes"
+    no_extra_spaces: yes
+  notify:
+    - restart avahi daemon
+  tags:
+    - mdns-repeater

@@ -1,0 +1,6 @@
+---
+dubzland_mdns_repeater_packages:
+  - avahi-daemon
+  - avahi-utils
+dubzland_mdns_repeater_avahi_daemon_name: avahi-daemon
+dubzland_mdns_repeater_avahi_conf_file: /etc/avahi/avahi-daemon.conf

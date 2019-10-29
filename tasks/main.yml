@@ -1,23 +1,11 @@
 ---
-- name: ensure required packages are installed
-  package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - avahi-daemon
-    - avahi-utils
-  tags:
-    - mdns-repeater
+- import_tasks: variables.yml
+- import_tasks: packages.yml
+- import_tasks: configuration.yml
 
-- name: ensure the avahi reflector is enabled
-  ini_file:
-    path: /etc/avahi/avahi-daemon.conf
-    section: reflector
-    option: enable-reflector
-    value: "yes"
-    no_extra_spaces: yes
-    backup: yes
-  notify:
-    - restart avahi-daemon
-  tags:
-    - mdns-repeater
+- meta: flush_handlers
+
+- name: ensure the avahi daemon is running
+  service:
+    name: "{{ dubzland_mdns_repeater_avahi_daemon_name }}"
+    state: started

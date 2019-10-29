@@ -1,7 +1,9 @@
 ---
-- name: restart avahi-daemon
+- name: enable avahi daemon
   service:
-    name: avahi-daemon
+    name: "{{ dubzland_mdns_repeater_avahi_daemon_name }}"
+
+- name: restart avahi daemon
+  service:
+    name: "{{ dubzland_mdns_repeater_avahi_daemon_name }}"
     state: restarted
-  
-# handlers file for dubzland-mdns-repeater
