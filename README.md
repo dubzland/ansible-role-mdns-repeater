@@ -1,5 +1,5 @@
 # Dubzland: mDNS Repeater
-[![Gitlab pipeline status (self-hosted)](https://img.shields.io/gitlab/pipeline/jdubz/dubzland-mdns-repeater?gitlab_url=https%3A%2F%2Fgit.dubzland.net)](https://git.dubzland.net/jdubz/dubzland-mdns-repeater/pipelines)
+[![Gitlab pipeline status (self-hosted)](https://git.dubzland.net/dubzland/ansible-role-mdns-repeater/badges/master/pipeline.svg)](https://git.dubzland.net/dubzland/ansible-role-mdns-repeater)
 
 Installs and configures the avahi daemon for broadcastint mDNS packets.
 
@@ -20,7 +20,7 @@ None
 ```yaml
 - hosts: servers
   roles:
-    - role: dubzland-mdns-repeater
+    - role: dubzland.mdns-repeater
 ```
 
 ## License

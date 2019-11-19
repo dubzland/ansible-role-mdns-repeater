@@ -2,6 +2,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: mdns_repeater
   author: t3hprm13
   description: Avahi daemon for Debian
   company: Cedar House Labs
@@ -10,6 +11,8 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - all
+        - stretch
+        - buster
   galaxy_tags:
-    - dhcp
+    - avahi
+    - mdns
